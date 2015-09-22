@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<uexplugins>
+    <plugin uexName="uexTouchId" version="3.1.1" build="1">
+        <info>1:参数改为json格式,添加fallBackTitle字段</info>
+        <build>0:EUExTouchId</build>
+    </plugin>
+</uexplugins>
