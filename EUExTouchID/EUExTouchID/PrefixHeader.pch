@@ -1,0 +1,16 @@
+//
+//  PrefixHeader.pch
+//  EUExTouchID
+//
+//  Created by 黄锦 on 15/10/19.
+//  Copyright © 2015年 AppCan. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import<UIKit/UIKit.h>
+#import "EUtility.h"
+#define UEX_LOCALIZEDSTRING(...) [EUtility uexPlugin:@"uexTouchID" localizedString:__VA_ARGS__,nil]
+#endif
+#endif /* PrefixHeader_pch */
