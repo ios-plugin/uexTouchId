@@ -37,7 +37,7 @@
         
     }
     
-    NSError * error;
+    NSError * error = nil;
     
     LAContext * context = [LAContext new];
     
@@ -71,7 +71,7 @@
     
     NSString * localizedFallbackTitle = [jsonDict objectForKey:@"fallBackTitle"] ? [jsonDict objectForKey:@"fallBackTitle"] : @"";
 
-    NSError * error;
+    NSError * error = nil;
     
     LAContext * context = [LAContext new];
     
