@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
     <plugin
-        uexName="uexTouchID" version="3.0.1" build="1">
-        <info>1:添加IDE支持</info>
+        uexName="uexTouchID" version="4.0.0" build="2">
+        <info>2:支持4.0引擎</info>
+        <build>1:添加IDE支持</build>
         <build>0:TouchID功能插件</build>
     </plugin>
 </uexplugins>

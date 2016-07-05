@@ -2,6 +2,7 @@
 <uexplugins>
     <plugin name="uexTouchID">
         <method name="verify"></method>
+        <method name="authenticate"></method>
+        <method name="canAuthenticate"></method>
     </plugin>
-    
 </uexplugins>
