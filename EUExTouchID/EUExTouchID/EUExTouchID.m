@@ -23,6 +23,8 @@ static const NSInteger kUexTouchIDNotAvailable = -6; // -6 = LAErrorTouchIDNotAv
 
 
 - (NSNumber *)canAuthenticate:(NSMutableArray *)inArguments{
+    ACArgsUnpack(NSDictionary *info) = inArguments;
+    NSNumber *mode = numberArg(info[@"mode"]);
     if (!NSClassFromString(@"LAContext")) {
         //8.0以下的系统
         return @(kUexTouchIDNotAvailable);
@@ -31,7 +33,7 @@ static const NSInteger kUexTouchIDNotAvailable = -6; // -6 = LAErrorTouchIDNotAv
     NSError *error = nil;
     LAPolicy policy = LAPolicyDeviceOwnerAuthenticationWithBiometrics;
     
-    if (ACSystemVersion() >= 9.0) {
+    if (ACSystemVersion() >= 9.0 && mode.integerValue == 1) {
         policy = LAPolicyDeviceOwnerAuthentication;
     }
     if(![ctx canEvaluatePolicy:policy error:&error]){
