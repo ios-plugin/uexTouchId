@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3CF370951BD1FD15000FC22F /* EUExTouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF370941BD1FD15000FC22F /* EUExTouchID.m */; };
+		4294F1B51D2B81A40042A631 /* AppCanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4294F1B41D2B81A40042A631 /* AppCanKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,21 +28,7 @@
 		3CF3708F1BD1FD15000FC22F /* libuexTouchID.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libuexTouchID.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF370921BD1FD15000FC22F /* EUExTouchID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EUExTouchID.h; sourceTree = "<group>"; };
 		3CF370941BD1FD15000FC22F /* EUExTouchID.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EUExTouchID.m; sourceTree = "<group>"; };
-		3CF370A31BD47EFC000FC22F /* EUExBase+Bundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EUExBase+Bundle.h"; sourceTree = "<group>"; };
-		3CF370A41BD47EFC000FC22F /* EUExBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBase.h; sourceTree = "<group>"; };
-		3CF370A51BD47EFC000FC22F /* EUExBaseDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBaseDefine.h; sourceTree = "<group>"; };
-		3CF370A61BD47EFC000FC22F /* EUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUtility.h; sourceTree = "<group>"; };
-		3CF370A71BD47EFC000FC22F /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		3CF370A81BD47EFC000FC22F /* WidgetOneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetOneDelegate.h; sourceTree = "<group>"; };
-		421E73A41BD7811D00BD40BF /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		421E73A51BD7811D00BD40BF /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
-		421E73A61BD7811D00BD40BF /* MD5Digest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5Digest.h; sourceTree = "<group>"; };
-		421E73A71BD7811D00BD40BF /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		421E73A81BD7811D00BD40BF /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		421E73A91BD7811D00BD40BF /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
-		421E73AA1BD7811D00BD40BF /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
-		421E73AB1BD7811D00BD40BF /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		421E73AC1BD7811D00BD40BF /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		4294F1B41D2B81A40042A631 /* AppCanKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCanKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4294F1B51D2B81A40042A631 /* AppCanKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,42 +62,12 @@
 		3CF370911BD1FD15000FC22F /* EUExTouchID */ = {
 			isa = PBXGroup;
 			children = (
-				421E73A31BD7811D00BD40BF /* JSON */,
-				3CF370A21BD47EFC000FC22F /* engineHeader */,
+				4294F1B41D2B81A40042A631 /* AppCanKit.framework */,
 				3CF370921BD1FD15000FC22F /* EUExTouchID.h */,
 				3CF370941BD1FD15000FC22F /* EUExTouchID.m */,
 				3C420D131BD48BC1001189E0 /* PrefixHeader.pch */,
 			);
 			path = EUExTouchID;
-			sourceTree = "<group>";
-		};
-		3CF370A21BD47EFC000FC22F /* engineHeader */ = {
-			isa = PBXGroup;
-			children = (
-				3CF370A31BD47EFC000FC22F /* EUExBase+Bundle.h */,
-				3CF370A41BD47EFC000FC22F /* EUExBase.h */,
-				3CF370A51BD47EFC000FC22F /* EUExBaseDefine.h */,
-				3CF370A61BD47EFC000FC22F /* EUtility.h */,
-				3CF370A71BD47EFC000FC22F /* JSON.h */,
-				3CF370A81BD47EFC000FC22F /* WidgetOneDelegate.h */,
-			);
-			path = engineHeader;
-			sourceTree = "<group>";
-		};
-		421E73A31BD7811D00BD40BF /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				421E73A41BD7811D00BD40BF /* JSON.h */,
-				421E73A51BD7811D00BD40BF /* JSONParser.h */,
-				421E73A61BD7811D00BD40BF /* MD5Digest.h */,
-				421E73A71BD7811D00BD40BF /* NSObject+SBJSON.h */,
-				421E73A81BD7811D00BD40BF /* NSString+SBJSON.h */,
-				421E73A91BD7811D00BD40BF /* SBJSON.h */,
-				421E73AA1BD7811D00BD40BF /* SBJsonBase.h */,
-				421E73AB1BD7811D00BD40BF /* SBJsonParser.h */,
-				421E73AC1BD7811D00BD40BF /* SBJsonWriter.h */,
-			);
-			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +218,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = $SRCROOT/uexTouchID;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EUExTouchID",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = $SRCROOT/EUExTouchID/PrefixHeader.pch;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -273,6 +235,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = $SRCROOT/uexTouchID;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EUExTouchID",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = $SRCROOT/EUExTouchID/PrefixHeader.pch;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
