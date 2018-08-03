@@ -30,6 +30,7 @@ static const NSInteger kUexTouchIDNotAvailable = -6; // -6 = LAErrorTouchIDNotAv
         return @(kUexTouchIDNotAvailable);
     }
     LAContext* ctx = [[LAContext alloc] init];
+    ctx.localizedFallbackTitle = @"";
     NSError *error = nil;
     LAPolicy policy = LAPolicyDeviceOwnerAuthenticationWithBiometrics;
     
@@ -61,6 +62,7 @@ static const NSInteger kUexTouchIDNotAvailable = -6; // -6 = LAErrorTouchIDNotAv
     
     LAContext* ctx = [[LAContext alloc] init];
     NSError* error = nil;
+    ctx.localizedFallbackTitle = @"";
     LAPolicy policy = LAPolicyDeviceOwnerAuthenticationWithBiometrics;
     if (ACSystemVersion() >= 9.0 && mode.integerValue == 1) {
         policy = LAPolicyDeviceOwnerAuthentication;
@@ -87,6 +89,7 @@ static const NSInteger kUexTouchIDNotAvailable = -6; // -6 = LAErrorTouchIDNotAv
 -(void) verify :(NSMutableArray*)inArguments{
     ACArgsUnpack(NSString *hint) = inArguments;
     LAContext* context = [[LAContext alloc] init];
+    context.localizedFallbackTitle = @"";
     void (^callback)(BOOL result,NSString *reason) = ^(BOOL result,NSString *reason){
         [self.webViewEngine callbackWithFunctionKeyPath:@"uexTouchID.cbVerify" arguments:ACArgsPack(@(result),reason)];
     };

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
     <plugin
-        uexName="uexTouchID" version="4.0.1" build="1">
-        <info>1: canAuthenticate接口支持配置mode</info>
+        uexName="uexTouchID" version="4.0.2" build="2">
+        <info>0: 中烟定制，无输入密码选项</info>
+        <build>1: canAuthenticate接口支持配置mode</build>
         <build>0: TouchID功能插件</build>
     </plugin>
 </uexplugins>
