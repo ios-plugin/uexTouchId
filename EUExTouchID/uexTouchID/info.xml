@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
     <plugin
-        uexName="uexTouchID" version="4.0.1" build="1">
-        <info>1: canAuthenticate接口支持配置mode</info>
+        uexName="uexTouchID" version="4.3.2" build="2019092001">
+        <info>2: 适配iOS13回调问题，防止闪退</info>
+        <build>1: canAuthenticate接口支持配置mode</build>
         <build>0: TouchID功能插件</build>
     </plugin>
 </uexplugins>
