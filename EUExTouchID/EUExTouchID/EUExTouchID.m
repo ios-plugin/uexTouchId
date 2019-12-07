@@ -29,18 +29,42 @@ static const NSInteger kUexTouchIDNotAvailable = -6; // -6 = LAErrorTouchIDNotAv
         //8.0以下的系统
         return @(kUexTouchIDNotAvailable);
     }
-    LAContext* ctx = [[LAContext alloc] init];
+    LAContext *context = [LAContext new];
     NSError *error = nil;
-    LAPolicy policy = LAPolicyDeviceOwnerAuthenticationWithBiometrics;
+    BOOL supportEvaluatePolicy = [context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error];
     
-    if (ACSystemVersion() >= 9.0 && mode.integerValue == 1) {
-        policy = LAPolicyDeviceOwnerAuthentication;
+    //    LAPolicyDeviceOwnerAuthenticationWithBiometrics iOS8.0以上支持，只有指纹验证功能
+    //    LAPolicyDeviceOwnerAuthentication iOS 9.0以上支持，包含指纹验证与输入密码的验证方式
+    if (@available(iOS 11.0, *)) {
+        if (context.biometryType == LABiometryTypeTouchID) {
+            // 指纹
+            if (error) {
+                // 支持指纹但没有设置
+            } else {
+                return @(kUexTouchIDNoError);
+            }
+        }else if (context.biometryType == LABiometryTypeFaceID) {
+            // 面容
+            if (error) {
+                //type = LAContextSupportTypeFaceIDNotEnrolled;
+                // 支持面容但没有设置
+            } else {
+                //支持faceid
+            }
+        }else {
+            // 不支持
+        }
+    } else {
+        if (error) {
+            if (error.code == LAErrorTouchIDNotEnrolled) {
+                // 支持指纹但没有设置
+            }
+        } else {
+            return @(kUexTouchIDNoError);
+        }
     }
-    if(![ctx canEvaluatePolicy:policy error:&error]){
-        ACLogDebug(@"TouchID is unavailable: %@",error.localizedDescription);
-        return @(error.code);
-    }
-    return @(kUexTouchIDNoError);
+    
+    return @(kUexTouchIDNotAvailable);
 }
 
 - (void)authenticate:(NSMutableArray *)inArguments{
