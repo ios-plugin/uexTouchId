@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
     <plugin
-        uexName="uexTouchID" version="4.3.2.1" build="2019092101">
-        <info>2.1: 适配iOS13回调问题，防止闪退</info>
+        uexName="uexTouchID" version="4.0.3.1" build="2019120702">
+        <info>3.1: 修改验证5次失败，校验方法错误的bug</info>
+        <build>3: canAuthenticate校验方法修改</build>
+        <build>2: 中烟定制，无输入密码选项</build>
         <build>1: canAuthenticate接口支持配置mode</build>
         <build>0: TouchID功能插件</build>
     </plugin>
