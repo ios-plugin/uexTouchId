@@ -31,6 +31,10 @@ static const NSInteger kUexTouchIDNotAvailable = -6; // -6 = LAErrorTouchIDNotAv
     }
     LAContext *context = [LAContext new];
     NSError *error = nil;
+    LAPolicy policy = LAPolicyDeviceOwnerAuthenticationWithBiometrics;
+    if (ACSystemVersion() >= 9.0 && mode.integerValue == 1) {
+        policy = LAPolicyDeviceOwnerAuthentication;
+    }
     BOOL supportEvaluatePolicy = [context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error];
     
     //    LAPolicyDeviceOwnerAuthenticationWithBiometrics iOS8.0以上支持，只有指纹验证功能
@@ -40,30 +44,23 @@ static const NSInteger kUexTouchIDNotAvailable = -6; // -6 = LAErrorTouchIDNotAv
             // 指纹
             if (error) {
                 // 支持指纹但没有设置
+                return @(error.code);
             } else {
                 return @(kUexTouchIDNoError);
             }
-        }else if (context.biometryType == LABiometryTypeFaceID) {
-            // 面容
-            if (error) {
-                //type = LAContextSupportTypeFaceIDNotEnrolled;
-                // 支持面容但没有设置
-            } else {
-                //支持faceid
-            }
-        }else {
-            // 不支持
+        }else{
+            //非touchid类型即为不支持
+            return @(kUexTouchIDNotAvailable);
         }
     } else {
-        if (error) {
-            if (error.code == LAErrorTouchIDNotEnrolled) {
-                // 支持指纹但没有设置
-            }
-        } else {
+        //11以下系统走原逻辑
+        if(!supportEvaluatePolicy){
+            ACLogDebug(@"TouchID is unavailable: %@",error.localizedDescription);
+            return @(error.code);
+        }else{
             return @(kUexTouchIDNoError);
         }
     }
-    
     return @(kUexTouchIDNotAvailable);
 }
 
