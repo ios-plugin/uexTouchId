@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<uexplugins>
+    <plugin name="uexTouchId">
+        <method name="check"></method>
+        <method name="verify"></method>
+	</plugin>
+</uexplugins>
